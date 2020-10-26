@@ -13,12 +13,12 @@ import ExpandedNotesContext from '../../context/ExpandedNotesContext'
 import '../../styles/NoteGroup.scss'
 
 import optionsIcon from '../../images/more.svg'
-import addNoteIcon from '../../images/add-note.svg'
 
 const images = []
 const INITIAL_GROUP_NAME = '[:Enter Group Name:]'
 
 const list = [
+    { name: 'Add Note', id: 'addnote' },
     { name: 'Edit Note Group Title', id: 'editnotegroup' },
     { name: 'Change Note Color', id: 'changenotecolor' },
     { name: 'Delete Note Group', id: 'deletenotegroup' },
@@ -38,7 +38,6 @@ const NoteGroup = props => {
         const optionsImg = new Image()
         const addNoteImg = new Image()
         optionsImg.src = optionsIcon
-        addNoteImg.src = addNoteIcon
         images.push(optionsImg, addNoteImg)
     }, [])
 
@@ -49,12 +48,6 @@ const NoteGroup = props => {
     useEffect(() => {
         if (isEditable && inputRef.current) inputRef.current.focus()
     }, [isEditable])
-
-    const onImageClick = (e) => {
-        e.stopPropagation()
-
-        dispatch(createNote(id))
-    }
 
     const onMenuClick = type => {
         switch (type) {
@@ -71,6 +64,10 @@ const NoteGroup = props => {
 
                 if (hasNotes && window.confirm('Are you sure you want to delete this Note Group'))
                     dispatch(deleteNoteGroup(id))
+                break
+            case 'addnote':
+                dispatch(createNote(id))
+                setExpandedNotes(prevIDs => ([...prevIDs, id]))
                 break
             default:
                 break
@@ -148,27 +145,17 @@ const NoteGroup = props => {
                     />
                     : <p className="text">{groupName}</p>
                 }
-                {isExpanded
-                    ? <div className="add-note-container" onClick={e => onImageClick(e)}>
-                        <img
-                            className="add-note"
-                            alt="add note"
-                            title="Add Note"
-                            src={addNoteIcon}
-                        />
-                    </div>
-                    : <Dropdown
-                        list={list}
-                        onMenuClick={onMenuClick}
-                    >
-                        <img
-                            className="options"
-                            alt="options"
-                            title="Options"
-                            src={optionsIcon}
-                        />
-                    </Dropdown>
-                }
+                <Dropdown
+                    list={list}
+                    onMenuClick={onMenuClick}
+                >
+                    <img
+                        className="options"
+                        alt="options"
+                        title="Options"
+                        src={optionsIcon}
+                    />
+                </Dropdown>
             </motion.div>
             <AnimatePresence>
                 {isExpanded && renderNoteItems()}

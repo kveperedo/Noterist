@@ -52,18 +52,6 @@
         img.options.open {
             transform: rotate(90deg);
         }
-
-        div.add-note-container {
-            display: flex;
-            align-items: center;
-
-            img.add-note {
-                width: 16px;
-                transition: all 0.2s ease-in-out;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-            }
-        }
     }
 
     ul.content {
