@@ -1,0 +1,39 @@
+.empty-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img.image {
+        height: 60%;
+        width: 60%;
+    }
+
+    div.text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+
+        & > * {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+
+        p.title {
+            font-weight: normal;
+            font-size: 36px;
+            letter-spacing: 0.05em;
+        }
+
+        p.subtitle {
+            color: #A6A6A6;
+            font-size: 14px;
+            letter-spacing: 0.05em;
+        }
+    }
+}

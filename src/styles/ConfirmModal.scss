@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: #0000005e;
+    backdrop-filter: blur(2px);
+}
+
+.confirm-modal {
+    position: absolute;
+    background-color: white;
+    box-shadow: 1px 1px 17px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    div.header {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: #f2f2f2;
+        border-radius: 10px 10px 0 0;
+
+        h1.title {
+            font-size: 18px;
+            font-weight: 400;
+            color: #2f2f2f;
+            letter-spacing: 0.05em;
+        }
+
+        img.close-icon {
+            filter: invert(48%) sepia(97%) saturate(2260%) hue-rotate(331deg) brightness(103%) contrast(103%);
+            width: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        img.close-icon:hover {
+            transform: rotate(90deg);
+        }
+    }
+
+    div.content {
+        padding: 10px 20px;
+        max-width: 500px;
+
+        p.text {
+            font-size: 14px;
+            margin: 20px 0;
+            color: #2f2f2f;
+        }
+    }
+
+    div.actions {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px;
+        padding-top: 0px;
+
+        & > * {
+            margin-left: 15px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s ease-in-out;
+            outline: none;
+        }
+
+        button.confirm {
+            background: #ff5d4a;
+            border: none;
+            border-radius: 10px;
+            color: white;
+        }
+
+        button.confirm:hover {
+            background: #f74430;
+        }
+
+        button.cancel {
+            background-color: unset;
+            border: 1px solid #a6a6a6;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        button.cancel:hover {
+            background: #a6a6a6;
+            color: white;
+        }
+    }
+}

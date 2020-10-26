@@ -1,0 +1,104 @@
+.scratchpad {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+
+    div.tabs {
+        display: flex;
+        flex-direction: column;
+        height: inherit;
+
+        ol.tab-list {
+            display: flex;
+            justify-content: space-between;
+            background: #f2f2f2;
+            border-radius: 10px;
+            height: 50px;
+            width: 100%;
+
+            div.tab {
+                display: flex;
+                width: inherit;
+                flex-direction: column;
+                align-content: flex-start;
+                flex-wrap: wrap;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                scrollbar-width: none;
+
+                li.tab-list-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-radius: 10px;
+                    background: #a6a6a6;
+                    color: white;
+                    font-size: 12px;
+                    margin: auto 8px;
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: background 0.2s ease-in-out;
+                    max-width: 150px;
+
+                    p.title {
+                        padding-right: 5px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+
+                    img.close-icon {
+                        filter: brightness(0.9);
+                        transition: all 0.2s ease-in-out;
+                    }
+
+                    img.close-icon:hover {
+                        filter: brightness(1);
+                        transform: rotate(90deg);
+                    }
+                }
+
+                li.tab-list-item.tab-list-active {
+                    background: #f74430;
+
+                    img.close-icon {
+                        filter: brightness(1);
+                    }
+                }
+
+                li.tab-list-item:hover:not(.tab-list-active) {
+                    background: #797979;
+                }
+            }
+
+            div.tab::-webkit-scrollbar {
+                display: none;
+            }
+
+            div.add {
+                display: flex;
+                justify-content: center;
+                margin: 0 8px;
+
+                img.add-tab {
+                    width: 35px;
+                    transition: all 0.2s ease-in-out;
+                    cursor: pointer;
+                }
+
+                img.add-tab:hover {
+                    filter: saturate(2);
+                    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.158));
+                }
+            }
+        }
+        div.tab-content {
+            flex-grow: 1;
+        }
+
+        div.empty-content-container {
+            height: inherit;
+        }
+    }
+}

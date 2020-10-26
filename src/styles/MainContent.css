@@ -1,0 +1,6 @@
+.main-content {
+    background: white;
+    width: inherit;
+    box-shadow: 1px 1px 17px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
