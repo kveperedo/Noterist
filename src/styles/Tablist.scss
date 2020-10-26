@@ -24,6 +24,11 @@
         }
     }
 
+    .tab.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
     .tab.selected:not(.minimized) {
         font-weight: bold;
 

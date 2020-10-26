@@ -12,9 +12,9 @@ import calendarLogoActive from '../images/calendar-active.svg'
 const tabData = [
     { name: 'ScratchPad', id: 'ScratchPad', icon: scratchpadLogo, iconSelected: scratchpadLogoActive },
     { name: 'Notes', icon: notesLogo, id: 'Notes', iconSelected: notesLogoActive },
-    { name: 'Todos', icon: todosLogo, id: 'Todos', iconSelected: todosLogoActive },
-    { name: 'Doodle', icon: doodleLogo, id: 'Doodle', iconSelected: doodleLogoActive },
-    { name: 'Calendar', icon: calendarLogo, id: 'Calendar', iconSelected: calendarLogoActive },
+    { name: 'Todos (Coming Soon)', icon: todosLogo, id: 'Todos', iconSelected: todosLogoActive, disabled: true },
+    { name: 'Doodle (Coming Soon)', icon: doodleLogo, id: 'Doodle', iconSelected: doodleLogoActive, disabled: true },
+    { name: 'Calendar (Coming Soon)', icon: calendarLogo, id: 'Calendar', iconSelected: calendarLogoActive, disabled: true },
 ]
 
 export default tabData
