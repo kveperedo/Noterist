@@ -8,12 +8,8 @@ import reducers from './reducers';
 import { loadLocalStorage, saveLocalStorage } from './localStorage';
 
 const persistedState = loadLocalStorage();
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true }) || compose
-const store = createStore(
-	reducers,
-	persistedState
-	// composeEnhancers(applyMiddleware())
-);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ trace: true }) || compose;
+const store = createStore(reducers, persistedState, composeEnhancers(applyMiddleware()));
 
 store.subscribe(() => {
 	saveLocalStorage({ scratchpads: store.getState().scratchpads, notes: store.getState().notes });
