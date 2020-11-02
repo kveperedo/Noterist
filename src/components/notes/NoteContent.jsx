@@ -9,7 +9,6 @@ import EditableText from '../EditableText';
 
 import { editNote } from '../../actions';
 import { modules, formats } from '../../data/reactQuillData';
-import preloadImages from '../../functions/preloadImages';
 
 import '../../styles/NoteContent.scss';
 
@@ -17,8 +16,6 @@ import editTitleLogo from '../../images/edit-title.svg';
 import emptyNotesLogo from '../../images/empty-notes.svg';
 import readOnlyEnabledLogo from '../../images/read-only-enabled.svg';
 import readOnlyDisabledLogo from '../../images/read-only-disabled.svg';
-
-const images = preloadImages(editTitleLogo, emptyNotesLogo, readOnlyEnabledLogo, readOnlyDisabledLogo);
 
 const findNote = (noteGroups, { groupID, noteID }) => {
 	const selectedGroup = noteGroups.find((group) => group.id === groupID) || null;

@@ -2,19 +2,8 @@ import React, { useEffect } from 'react';
 
 import '../styles/Tablist.scss';
 
-let images = []; //Used for preloading images
-
 const Tablist = (props) => {
 	const { tabs, selectedTab, setSelectedTab, isMinimized } = props;
-	useEffect(() => {
-		tabs.forEach((tab) => {
-			const img = new Image();
-			const imgSelected = new Image();
-			img.src = tab.icon;
-			imgSelected.src = tab.iconSelected;
-			images.push(img, imgSelected);
-		});
-	}, []);
 
 	const renderTabs = () =>
 		tabs.map((tab) => {

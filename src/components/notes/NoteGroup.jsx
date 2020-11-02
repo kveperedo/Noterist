@@ -14,7 +14,6 @@ import '../../styles/NoteGroup.scss';
 
 import optionsIcon from '../../images/more.svg';
 
-const images = [];
 const INITIAL_GROUP_NAME = '[:Enter Group Name:]';
 
 const list = [
@@ -33,13 +32,6 @@ const NoteGroup = (props) => {
 	const { expandedNotes, setExpandedNotes } = useContext(ExpandedNotesContext);
 	const [isEditable, setIsEditable] = useState(groupName === INITIAL_GROUP_NAME);
 	const isExpanded = expandedNotes.includes(id);
-
-	useEffect(() => {
-		const optionsImg = new Image();
-		const addNoteImg = new Image();
-		optionsImg.src = optionsIcon;
-		images.push(optionsImg, addNoteImg);
-	}, []);
 
 	useEffect(() => {
 		if (inputRef.current) inputRef.current.focus();
