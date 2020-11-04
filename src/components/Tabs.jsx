@@ -23,7 +23,7 @@ const Tabs = (props) => {
 		if (children.length === 1) setActiveTab(defaultTab);
 		if (oldChildrenCount !== undefined && children.length > oldChildrenCount)
 			setActiveTab(children[children.length - 1].props.id);
-	}, [children, defaultTab, oldChildrenCount]); //TODO:
+	}, [children, defaultTab, oldChildrenCount, setActiveTab]);
 
 	const onTabClick = (e, tabID) => {
 		if (onTabDelete && e.target.classList.contains('close-icon')) return null;

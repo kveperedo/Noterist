@@ -84,7 +84,7 @@ const NoteContent = (props) => {
 		}
 
 		return () => clearTimeout(timerID);
-	}, [title, content, isReadOnly]);
+	}, [title, content, isReadOnly, dispatch, noteGroupID, selectedNote]);
 
 	if (selectedNote === null || !Object.values(selectedNote).length)
 		return (
