@@ -4,7 +4,7 @@ import { motion, AnimateSharedLayout } from 'framer-motion';
 
 import NoteGroup from './NoteGroup';
 
-import { createNoteGroup } from '../../actions/';
+import { createNoteGroup } from '../../features/notesSlice';
 
 import '../../styles/NoteList.scss';
 

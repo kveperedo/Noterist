@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import SelectedNoteContext from '../../context/SelectedNoteContext';
 
-import { deleteNote } from '../../actions';
+import { deleteNote } from '../../features/notesSlice';
 
 import '../../styles/NoteItem.scss';
 

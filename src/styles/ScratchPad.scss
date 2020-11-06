@@ -98,7 +98,7 @@
         }
 
         div.empty-content-container {
-            height: inherit;
+            height: calc(100% - 50px);
         }
     }
 }

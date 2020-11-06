@@ -7,7 +7,7 @@ import 'react-quill/dist/quill.bubble.css';
 import EmptyContent from '../EmptyContent';
 import EditableText from '../EditableText';
 
-import { editNote } from '../../actions';
+import { editNote } from '../../features/notesSlice';
 import { modules, formats } from '../../data/reactQuillData';
 
 import '../../styles/NoteContent.scss';
@@ -84,7 +84,7 @@ const NoteContent = (props) => {
 		}
 
 		return () => clearTimeout(timerID);
-	}, [title, content, isReadOnly, dispatch, noteGroupID, selectedNote]);
+	}, [title, content, isReadOnly]);
 
 	if (selectedNote === null || !Object.values(selectedNote).length)
 		return (
