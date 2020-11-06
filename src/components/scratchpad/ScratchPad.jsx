@@ -5,24 +5,24 @@ import Tabs from '../Tabs';
 import ScratchContent from './ScratchContent';
 import EmptyContent from '../EmptyContent';
 
-import { createScratch, deleteScratch, editScratch } from '../../actions';
+import { createPad, deletePad, editPad } from '../../features/scratchSlice.js';
 
 import '../../styles/ScratchPad.scss';
 import emptyImage from '../../images/empty.svg';
 
 const ScratchPad = (props) => {
-	const { scratchpads, createScratch, deleteScratch, editScratch } = props;
+	const { scratchpads, createPad, deletePad, editPad } = props;
 
 	const onTabAdd = () => {
-		createScratch();
+		createPad();
 	};
 
 	const onTabDelete = (id) => {
-		deleteScratch(id);
+		deletePad(id);
 	};
 
 	const onTabEdit = (tab) => {
-		editScratch(tab);
+		editPad(tab);
 	};
 
 	return (
@@ -54,4 +54,4 @@ const mapStateToProps = (state) => {
 	return { scratchpads: state.scratchpads };
 };
 
-export default connect(mapStateToProps, { createScratch, deleteScratch, editScratch })(ScratchPad);
+export default connect(mapStateToProps, { createPad, editPad, deletePad })(ScratchPad);

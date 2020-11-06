@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import NoteItem from './NoteItem';
 import Dropdown from '../Dropdown';
 
-import { createNote, deleteNoteGroup, editNoteGroupName, editNoteGroupColor } from '../../actions/index';
+import { createNote, deleteNoteGroup, editNoteGroupName, editNoteGroupColor } from '../../features/notesSlice';
 
 import ExpandedNotesContext from '../../context/ExpandedNotesContext';
 

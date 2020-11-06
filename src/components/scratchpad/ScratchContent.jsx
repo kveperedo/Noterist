@@ -31,7 +31,7 @@ const ScratchContent = (props) => {
 	}, [padData]);
 
 	const onEditableChange = (title) => {
-		onTabEdit({ ...padData, name: title });
+		onTabEdit({ ...padData, title: title });
 	};
 
 	const onInputChange = (e) => {

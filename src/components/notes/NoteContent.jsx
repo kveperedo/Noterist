@@ -7,7 +7,7 @@ import 'react-quill/dist/quill.bubble.css';
 import EmptyContent from '../EmptyContent';
 import EditableText from '../EditableText';
 
-import { editNote } from '../../actions';
+import { editNote } from '../../features/notesSlice';
 import { modules, formats } from '../../data/reactQuillData';
 
 import '../../styles/NoteContent.scss';

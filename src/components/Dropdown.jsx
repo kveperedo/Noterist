@@ -75,7 +75,7 @@ const DropdownList = (props) => {
 		}, 1000);
 
 		return () => clearTimeout(delayHandle.current);
-	}, []);
+	}, [setIsExpanded]);
 
 	const listRef = useRef();
 	const delayHandle = useRef();
