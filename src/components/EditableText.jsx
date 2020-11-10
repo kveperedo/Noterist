@@ -15,7 +15,10 @@ const EditableText = (props) => {
 	}, [value]);
 
 	useEffect(() => {
-		if (isEditable) inputRef.current.focus();
+		if (isEditable) {
+			inputRef.current.focus();
+			inputRef.current.select();
+		}
 	}, [isEditable]);
 
 	const onEditTitleClick = () => {

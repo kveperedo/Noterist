@@ -34,11 +34,17 @@ const NoteGroup = (props) => {
 	const isExpanded = expandedNotes.includes(id);
 
 	useEffect(() => {
-		if (inputRef.current) inputRef.current.focus();
+		if (inputRef.current) {
+			inputRef.current.focus();
+			inputRef.current.select();
+		}
 	}, []);
 
 	useEffect(() => {
-		if (isEditable && inputRef.current) inputRef.current.focus();
+		if (isEditable && inputRef.current) {
+			inputRef.current.focus();
+			inputRef.current.select();
+		}
 	}, [isEditable]);
 
 	const onMenuClick = (type) => {
